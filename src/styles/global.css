@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+/* Add this to your global.css file */
+
+/* Navbar transition classes */
+.transition-navbar {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Ensure body has proper padding for fixed navbar */
+body {
+  padding-top: 80px;
+}
+
+/* Navbar backdrop blur support */
+.backdrop-blur-sm {
+  -webkit-backdrop-filter: blur(4px); /* Safari support */
+  backdrop-filter: blur(4px);
+}
+
+/* Mobile menu animation */
+@media (max-width: 1279px) {
+  #navbar-default {
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  #navbar-default.hidden {
+    animation: slideUp 0.3s ease-out;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* Active page indicator */
+.nav-link-active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background-color: #16a34a;
+  border-radius: 1px;
+}
+
+@media (max-width: 1279px) {
+  .nav-link-active::after {
+    display: none;
+  }
+}
+/* Add this to your global.css file */
+
+/* Base body padding for fixed navbar */
+body {
+  padding-top: 80px;
+}
+
+/* Ensure navbar appears above all content */
+#navbar {
+  z-index: 9999;
+}
+
+/* Mobile responsive fixes */
+@media (max-width: 1279px) {
+  /* Fix mobile menu z-index issues */
+  #navbar-default {
+    z-index: 9998;
+  }
+  
+  /* Prevent body scroll when mobile menu is open */
+  body.menu-open {
+    overflow: hidden;
+  }
+}
+
+/* Smooth transitions for all navbar elements */
+.transition-navbar,
+#navbar * {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Fix for mobile devices - prevent zoom on button click */
+button, 
+input, 
+select, 
+textarea {
+  font-size: 16px;
+}
+
+@media (max-width: 1279px) {
+  button, 
+  input, 
+  select, 
+  textarea {
+    font-size: 16px;
+    transform: scale(1);
+  }
+}
+
+/* Ensure proper touch targets on mobile */
+@media (max-width: 1279px) {
+  #mobile-menu-button {
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .nav-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Fix for iOS Safari navbar behavior */
+@supports (-webkit-touch-callout: none) {
+  #navbar {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
