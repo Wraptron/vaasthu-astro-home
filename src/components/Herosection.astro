@@ -1,54 +1,34 @@
 ---
-import Layout from '../layouts/Layout.astro';
+// No frontmatter needed unless you pass props
 ---
 
-<Layout title="Home - The Vaasthu Company" showHero={true}>
-  <!-- Additional content can go here -->
-  <section class="py-16 px-4 bg-white">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-          Why Choose Vastu Shastra?
-        </h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">
-          Ancient wisdom meets modern living. Discover how proper energy alignment 
-          can transform your space and enhance your life.
-        </p>
+<section class="relative w-full min-h-screen flex items-center justify-center bg-white overflow-hidden">
+  <div class="flex flex-col md:flex-row items-center justify-center gap-4 max-w-7xl px-6 py-20">
+    <!-- Image Column -->
+    <div class="flex gap-2">
+      <div class="space-y-2">
+        <img src="/Images/OIP.jpeg" class="h-48 w-28 object-cover shadow-md" />
+        <img src="/Images/housing-riverwalk-downtown-apartments-2019.webp" class="h-48 w-28 object-cover shadow-md" />
       </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="text-center p-6 rounded-xl bg-gradient-to-br from-green-50 to-blue-50 hover:shadow-lg transition-shadow duration-300">
-          <div class="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
-            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Home Harmony</h3>
-          <p class="text-gray-600">Create peaceful and prosperous living spaces with proper directional alignment.</p>
-        </div>
-
-        <div class="text-center p-6 rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 hover:shadow-lg transition-shadow duration-300">
-          <div class="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
-            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Business Success</h3>
-          <p class="text-gray-600">Enhance productivity and prosperity in your workplace with Vastu principles.</p>
-        </div>
-
-        <div class="text-center p-6 rounded-xl bg-gradient-to-br from-purple-50 to-pink-50 hover:shadow-lg transition-shadow duration-300">
-          <div class="w-16 h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
-            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Health & Wellness</h3>
-          <p class="text-gray-600">Promote physical and mental well-being through balanced energy flow.</p>
-        </div>
+      <img src="/Images/FRONT.jpg" class="h-100 w-70 object-cover shadow-md" />
+      <div class="space-y-2">
+        <img src="/Images/OIP.jpeg" class="h-48 w-28 object-cover shadow-md" />
+        <img src="/Images/housing-riverwalk-downtown-apartments-2019.webp" class="h-48 w-28 object-cover shadow-md" />
       </div>
     </div>
-  </section>
 
-  
-</Layout>
+    <!-- Text Content -->
+    <div class="text-center md:text-left max-w-lg mt-10 md:mt-0 md:ml-10">
+      <h1 class="text-6xl font-extrabold leading-tight tracking-wide text-gray-800">
+        <span class="text-gray-300">EX</span><span class="text-blue-900">PLORE</span>
+      </h1>
+      <p class="mt-4 text-sm text-gray-600 tracking-widest">THE WORLD</p>
+      <p class="mt-2 text-gray-500 text-base">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
+      </p>
+      <button class="mt-6 px-6 py-2 border border-gray-800 hover:bg-gray-800 hover:text-white transition-all text-sm uppercase tracking-wider">
+        More Info
+      </button>
+    </div>
+  </div>
+</section>

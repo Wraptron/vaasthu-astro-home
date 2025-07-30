@@ -1,17 +1,11 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Herosection from '../components/Herosection.astro';
+import Layout from "../layouts/Layout.astro";
+import HeroSection from '../components/Herosection.astro';
 ---
 
-<Layout title="Home">
-	
-  <section class="text-center py-12 px-4">
-	<Navbar />
-	<Herosection />
-    
-    
-  </section>
-  
+<Layout title="Home" showHero={true}>
+  <!-- Optional content -->
+  <HeroSection />
 </Layout>
+
 

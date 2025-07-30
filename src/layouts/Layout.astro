@@ -15,113 +15,20 @@ const { title, showHero = false } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title || "The Vaasthu Company"}</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>
   <body class="min-h-screen flex flex-col">
     <Navbar />
 
     {showHero && (
-      <section class="relative min-h-screen bg-gradient-to-br from-blue-50 to-green-50 overflow-hidden">
-        <!-- Image Collage -->
-        <div class="absolute inset-0 flex items-center justify-center">
-          <div class="relative w-full max-w-7xl mx-auto px-4">
-            <!-- Main Image Grid -->
-            <div class="grid grid-cols-12 grid-rows-6 gap-4 h-[80vh] max-h-[600px]">
-              
-              <!-- Large Left Image -->
-              <div class="col-span-3 row-span-4 row-start-2 relative group">
-                <div class="w-full h-full rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
-                  <img 
-                    src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
-                    alt="Modern Home Design" 
-                    class="w-full h-full object-cover"
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                </div>
-              </div>
-
-              <!-- Tall Center Image -->
-              <div class="col-span-2 row-span-5 row-start-1 relative group">
-                <div class="w-full h-full rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
-                  <img 
-                    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
-                    alt="Vastu Architecture" 
-                    class="w-full h-full object-cover"
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                </div>
-              </div>
-
-              <!-- Medium Center Image -->
-              <div class="col-span-3 row-span-3 row-start-3 relative group">
-                <div class="w-full h-full rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
-                  <img 
-                    src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-                    alt="Interior Design" 
-                    class="w-full h-full object-cover"
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                </div>
-              </div>
-
-              <!-- Small Top Right -->
-              <div class="col-span-2 row-span-2 row-start-1 relative group">
-                <div class="w-full h-full rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
-                  <img 
-                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
-                    alt="Vastu Consultation" 
-                    class="w-full h-full object-cover"
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                </div>
-              </div>
-
-              <!-- Bottom Right -->
-              <div class="col-span-2 row-span-3 row-start-4 relative group">
-                <div class="w-full h-full rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
-                  <img 
-                    src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
-                    alt="Sacred Geometry" 
-                    class="w-full h-full object-cover"
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-       
-
-        <!-- Decorative Elements -->
-        <div class="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-green-200 to-blue-200 rounded-full opacity-20 animate-pulse"></div>
-        <div class="absolute bottom-20 right-10 w-24 h-24 bg-gradient-to-br from-yellow-200 to-green-200 rounded-full opacity-20 animate-pulse" style="animation-delay: 1s;"></div>
-        <div class="absolute top-1/2 left-20 w-16 h-16 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full opacity-20 animate-pulse" style="animation-delay: 2s;"></div>
+      <section class="">
+        
       </section>
     )}
 
-    <main class={`flex-grow ${showHero ? '' : 'pt-[80px]'}`}>
+    <main class={`flex-grow ${showHero ? '' : 'pt-20'}`}>
       <slot />
     </main>
-
-  
-
-    <style>
-      @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-      }
-      
-      .animate-float {
-        animation: float 3s ease-in-out infinite;
-      }
-      
-      .animate-float-delayed {
-        animation: float 3s ease-in-out infinite;
-        animation-delay: 1.5s;
-      }
-    </style>
   </body>
 </html>
