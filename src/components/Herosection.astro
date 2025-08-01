@@ -1,10 +1,10 @@
 ---
 // No frontmatter needed unless you pass props
 ---
-
+<!-- 
 <section class="relative w-full min-h-screen flex items-center justify-center bg-white overflow-hidden">
   <div class="flex flex-col md:flex-row items-center justify-center gap-4 max-w-7xl px-6 py-20">
-    <!-- Image Column -->
+   
     <div class="flex gap-2">
       <div class="space-y-2">
         <img src="/Images/OIP.jpeg" class="h-48 w-28 object-cover shadow-md" />
@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <!-- Text Content -->
+    
     <div class="text-center md:text-left max-w-lg mt-10 md:mt-0 md:ml-10">
       <h1 class="text-6xl font-extrabold leading-tight tracking-wide text-gray-800">
         <span class="text-gray-300">EX</span><span class="text-blue-900">PLORE</span>
@@ -31,4 +31,379 @@
       </button>
     </div>
   </div>
-</section>
+</section> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Modern Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6), 0 0 60px rgba(59, 130, 246, 0.3); }
+        }
+
+        .image-hover {
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .image-hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s;
+            z-index: 1;
+        }
+        
+        .image-hover:hover::before {
+            left: 100%;
+        }
+        
+        .image-hover:hover {
+            transform: translateY(-12px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .text-shimmer {
+            background: linear-gradient(90deg, #1f2937, #3b82f6, #8b5cf6, #1f2937);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s linear infinite;
+        }
+        
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .glowing-border {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .glowing-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            padding: 2px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4, #10b981);
+            border-radius: inherit;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        .content-slide {
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        .content-slide:hover {
+            transform: translateX(10px);
+        }
+        
+        .element-label {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            opacity: 0;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .image-hover:hover .element-label {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .image-hover:hover {
+                transform: translateY(var(--hover-lift, -8px)) scale(var(--hover-scale, 1.02));
+            }
+            
+            .content-slide:hover {
+                transform: translateX(5px);
+            }
+            
+            /* Better touch targets */
+            .glass-effect {
+                padding: 1rem;
+                min-height: 44px; /* iOS recommended touch target */
+            }
+            
+            /* Reduced motion for better performance */
+            .floating-element {
+                animation-duration: 8s;
+            }
+            
+            /* Better text readability */
+            .text-shimmer {
+                -webkit-text-fill-color: #1f2937;
+                background: none;
+                animation: none;
+            }
+            
+            /* Simplified backgrounds for performance */
+            .glass-effect {
+                background: rgba(255, 255, 255, 0.8);
+                backdrop-filter: none;
+            }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            section {
+                padding: 2rem 0;
+            }
+            
+            .image-hover {
+                height: 18rem;
+                width: 5rem;
+            }
+            
+            .glass-effect {
+                padding: 1rem;
+                border-radius: 1rem;
+            }
+            
+            .text-3xl {
+                font-size: 1.875rem;
+            }
+            
+            /* Disable complex animations on very small screens */
+            .floating-element {
+                animation: none;
+            }
+            
+            .glowing-border::before {
+                animation: none;
+            }
+        }
+
+        /* Large screens optimization */
+        @media (min-width: 1024px) {
+            .image-hover:hover {
+                transform: translateY(var(--hover-lift, -12px)) scale(var(--hover-scale, 1.05));
+            }
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .glass-effect {
+                background: rgba(255, 255, 255, 0.95);
+                border: 2px solid #000;
+            }
+            
+            .text-shimmer {
+                -webkit-text-fill-color: #000;
+                background: none;
+                animation: none;
+            }
+        }
+
+        /* Reduced motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            .floating-element,
+            .text-shimmer,
+            .glowing-border::before {
+                animation: none;
+            }
+            
+            .image-hover,
+            .content-slide {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Main About Us Section -->
+    <section class="w-full py-16 relative overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-cyan-50 opacity-60"></div>
+        <div class="absolute top-0 left-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse" style="animation-delay: 2s;"></div>
+        
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-start justify-between gap-12 px-6 relative z-10">
+            
+            <!-- Enhanced Banner Images on the Left -->
+            <div class="flex gap-2 sm:gap-4 overflow-x-auto lg:overflow-visible lg:w-1/2 justify-start order-2 lg:order-1 pb-4 lg:pb-0 px-2 sm:px-0">
+                <div class="image-hover glowing-border h-72 w-20 sm:h-80 sm:w-24 lg:h-96 lg:w-28 rounded-xl sm:rounded-2xl flex-shrink-0 floating-element">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                         alt="Water Element" 
+                         class="h-full w-full object-cover rounded-xl sm:rounded-2xl" 
+                         loading="lazy" />
+                    <div class="element-label">💧 Water</div>
+                </div>
+                
+                <div class="image-hover glowing-border h-72 w-20 sm:h-80 sm:w-24 lg:h-96 lg:w-28 rounded-xl sm:rounded-2xl flex-shrink-0 floating-element" style="animation-delay: 1s;">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                         alt="Air Element" 
+                         class="h-full w-full object-cover rounded-xl sm:rounded-2xl" 
+                         loading="lazy" />
+                    <div class="element-label">🌪️ Air</div>
+                </div>
+                
+                <div class="image-hover glowing-border h-72 w-20 sm:h-80 sm:w-24 lg:h-96 lg:w-28 rounded-xl sm:rounded-2xl flex-shrink-0 floating-element" style="animation-delay: 2s;">
+                    <img src="https://images.unsplash.com/photo-1525183995014-bd94c0750cd5?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                         alt="Fire Element" 
+                         class="h-full w-full object-cover rounded-xl sm:rounded-2xl" 
+                         loading="lazy" />
+                    <div class="element-label">🔥 Fire</div>
+                </div>
+                
+                <div class="image-hover glowing-border h-72 w-20 sm:h-80 sm:w-24 lg:h-96 lg:w-28 rounded-xl sm:rounded-2xl flex-shrink-0 floating-element" style="animation-delay: 3s;">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                         alt="Earth Element" 
+                         class="h-full w-full object-cover rounded-xl sm:rounded-2xl" 
+                         loading="lazy" />
+                    <div class="element-label">🏔️ Earth</div>
+                </div>
+                
+                <div class="image-hover glowing-border h-72 w-20 sm:h-80 sm:w-24 lg:h-96 lg:w-28 rounded-xl sm:rounded-2xl flex-shrink-0 floating-element" style="animation-delay: 4s;">
+                    <img src="https://images.unsplash.com/photo-1446776877081-d282a0f896e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                         alt="Ether Element" 
+                         class="h-full w-full object-cover rounded-xl sm:rounded-2xl" 
+                         loading="lazy" />
+                    <div class="element-label">✨ Ether</div>
+                </div>
+            </div>
+
+            <!-- Enhanced About Us Content on the Right -->
+            <div class="lg:w-1/2 order-1 lg:order-2 space-y-4 sm:space-y-6">
+                <div class="content-slide">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-4 sm:mb-6 leading-tight">
+                        <span class="text-shimmer">ABOUT</span> 
+                        <span class="text-gray-900">US</span>
+                    </h2>
+                </div>
+                
+                <div class="glass-effect rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 content-slide space-y-3 sm:space-y-4" style="transition-delay: 0.1s;">
+                    <p class="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed font-medium">
+                        We harness the power of the five fundamental elements to create extraordinary experiences. 
+                        Our journey began with a simple belief: that nature holds the key to innovation and harmony.
+                    </p>
+                    <p class="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed">
+                        Through careful balance of Water's fluidity, Air's freedom, Fire's passion, Earth's stability, 
+                        and Ether's limitless potential, we craft solutions that resonate with the natural world.
+                    </p>
+                </div>
+                
+                <!-- Interactive Stats -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 content-slide" style="transition-delay: 0.2s;">
+                    <div class="glass-effect rounded-lg sm:rounded-xl p-3 sm:p-4 text-center hover:scale-105 transition-transform duration-300 cursor-pointer">
+                        <div class="text-xl sm:text-2xl font-bold text-blue-600">500+</div>
+                        <div class="text-xs text-gray-600 font-medium">Projects</div>
+                    </div>
+                    <div class="glass-effect rounded-lg sm:rounded-xl p-3 sm:p-4 text-center hover:scale-105 transition-transform duration-300 cursor-pointer">
+                        <div class="text-xl sm:text-2xl font-bold text-purple-600">15+</div>
+                        <div class="text-xs text-gray-600 font-medium">Years</div>
+                    </div>
+                    <div class="glass-effect rounded-lg sm:rounded-xl p-3 sm:p-4 text-center hover:scale-105 transition-transform duration-300 cursor-pointer col-span-2 sm:col-span-1">
+                        <div class="text-xl sm:text-2xl font-bold text-cyan-600">50k+</div>
+                        <div class="text-xs text-gray-600 font-medium">Happy Clients</div>
+                    </div>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="content-slide" style="transition-delay: 0.3s;">
+                    <button class="group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold text-white transition-all duration-300 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full hover:from-blue-700 hover:to-purple-700 hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-blue-300 w-full sm:w-auto">
+                        <span class="relative z-10">Discover More</span>
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add parallax scroll effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.floating-element');
+            
+            parallaxElements.forEach((element, index) => {
+                const speed = 0.5 + (index * 0.1);
+                (element as HTMLElement).style.transform = `translateY(${scrolled * speed * 0.1}px)`;
+            });
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    (entry.target as HTMLElement).style.opacity = '1';
+                    (entry.target as HTMLElement).style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all content elements
+        document.querySelectorAll('.content-slide').forEach(el => {
+            (el as HTMLElement).style.opacity = '0';
+            (el as HTMLElement).style.transform = 'translateY(30px)';
+            observer.observe(el);
+        });
+
+        // Add touch-friendly hover effects for mobile
+        if ('ontouchstart' in window) {
+            document.querySelectorAll('.image-hover').forEach(img => {
+                img.addEventListener('touchstart', function(this: HTMLElement) {
+                    this.classList.add('hover');
+                });
+                img.addEventListener('touchend', function(this: HTMLElement) {
+                    setTimeout(() => {
+                        this.classList.remove('hover');
+                    }, 2000);
+                });
+            });
+        }
+    </script>
+</body>
+</html>
