@@ -1,0 +1,85 @@
+---
+const services = [
+  {
+    title: "Functional Design",
+    description: "WE USE GIS SOFTWARE (GOOGLE EARTH PRO TO GEO TAG THE SITE)",
+    image: "/Images/Gissoftware.jpg",
+  },
+  {
+    title: "Renovation of spaces",
+    description: "WE GET THE PRECISE DEGREES FOR NORTH POINT",
+    image: "/Images/North.jpg",
+  },
+  {
+    title: "Residential Design",
+    description: "WE DRAFT THE PLAN IN AUTOCAD AND GET THE CENTROID OF THE SPACE",
+    image: "/Images/Autocard.jpg",
+  },
+  {
+    title: "Renovation of spaces",
+    description: "WE PLACE THE CHAKRA TO ANALYZE THE VASTHU",
+    image: "/Images/chakra.jpg",
+  },
+  {
+    title: "Residential Design",
+    description: "WE CHECK TOTAL OF 32 DIRECTIONS",
+    image: "/Images/Direction.jpg",
+  },
+  {
+    title: "Renovation of spaces",
+    description: "WE CHECK ASTROLOGY OF THE OCCUPANT",
+    image: "/Images/Astrology.jpg",
+  },
+  {
+    title: "Residential Design",
+    description: "WE PLOT THE 45 DEVATHAS AND MARMA POINTS IN VASTHU",
+    image: "/Images/Marma.jpg",
+  },
+  {
+    title: "Renovation of spaces",
+    description: "WE GIVE RECOMMENDATIONS AS PER THE ANALYSIS THROUGH ONLINE OR IN SITE",
+    image: "/Images/Site.jpg",
+  },
+  {
+    title: "Residential Design",
+    description: "WE PREPARE A REPORT FOR FUTURE REFERENCE",
+    image: "/Images/Report.jpg",
+  },
+  {
+    title: "Residential Design",
+    description: "WE PROVIDE LIFE TIME SUPPORT AND FOLLOW UP WITH RESPECT TO THE SPACE",
+    image: "/Images/Support.jpg",
+  },
+];
+---
+
+<section class="max-w-7xl mx-auto px-4 py-16">
+  <h2 class="text-4xl md:text-5xl font-semibold text-gray-900 mb-10 ju">
+    Our Services <em class="italic font-light"></em>
+  </h2>
+
+  <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+    {
+      services.map(service => (
+        <div class="relative group overflow-hidden rounded-xl shadow-md cursor-pointer">
+          
+          <!-- Image with hover effect -->
+          <img
+            src={service.image}
+            alt={service.title}
+            class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+          />
+
+          <!-- Gradient overlay -->
+          <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/70 to-transparent z-10"></div>
+
+          <!-- Text block -->
+          <div class="absolute bottom-0 left-0 right-0 z-20 px-4 pb-4">
+            <h3 class="text-lg font-serif text-white font-semibold leading-tight">{service.title}</h3>
+            <p class="text-sm text-gray-200">{service.description}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
