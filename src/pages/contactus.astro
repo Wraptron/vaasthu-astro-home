@@ -2,6 +2,7 @@
 // contact.astro (or your page file)
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Contact Us">
@@ -86,8 +87,11 @@ import Navbar from '../components/Navbar.astro';
       </div>
     </form>
   </div>
+  
 </section>
+<Footer />
 </Layout>
+
 
 <style>
   .contact-section {
@@ -328,6 +332,7 @@ import Navbar from '../components/Navbar.astro';
     border-color: #16a34a;
   }
 </style>
+
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
