@@ -45,7 +45,7 @@ const services = [
 
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
   <!-- Heading -->
-  <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-12 text-center">
+  <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-gray-900 mb-12 animate-fadeInUp">
     Our Services
   </h2>
 
@@ -53,24 +53,24 @@ const services = [
   <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
     {
       services.map(service => (
-        <div class="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition duration-300 bg-gray-100">
-          
+        <div
+          class="group rounded-2xl shadow-lg hover:shadow-2xl transition duration-500 bg-white overflow-hidden transform hover:-translate-y-2 hover:scale-105"
+        >
           <!-- Image -->
-          <img
-            src={service.image}
-            alt={service.title}
-            class="w-full h-56 sm:h-64 lg:h-72 object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-          />
+          <div class="overflow-hidden">
+            <img
+              src={service.image}
+              alt={service.title}
+              class="w-full h-56 sm:h-64 lg:h-72 object-cover transform group-hover:scale-110 transition duration-500"
+            />
+          </div>
 
-          <!-- Gradient Overlay -->
-          <div class="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
-
-          <!-- Text -->
-          <div class="absolute bottom-0 left-0 right-0 z-20 px-4 pb-4">
-            <h3 class="text-lg sm:text-xl font-semibold text-white mb-1 leading-snug">
+          <!-- Text below image -->
+          <div class="p-5 sm:p-6">
+            <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-2 group-hover:text-[#114c52] transition duration-300">
               {service.title}
             </h3>
-            <p class="text-sm sm:text-base text-gray-200 leading-relaxed">
+            <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
               {service.description}
             </p>
           </div>
