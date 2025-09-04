@@ -1,0 +1,48 @@
+<section class="bg-white text-gray-900 py-16 px-6 sm:px-10 lg:px-20 animate-fadeInUp">
+  <!-- Heading -->
+  <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12">
+    Why Choose Us
+  </h2>
+
+  <!-- Grid of Reasons -->
+  <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      [
+        "Lifetime support",
+        "Precise and detailed report",
+        "Solution-based service",
+        "Two professionals at the price of one",
+        "Multi-disciplinary approach",
+        "Highly cost effective",
+        "Online mode",
+        "High precision CAD and GIS software",
+        "DIY Vastu Remedies",
+        "No demolition required",
+        "Ethical",
+        "Trustworthy",
+        "Scientific & logical",
+      ].map(reason => (
+        <div class="flex items-start space-x-3 p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition duration-300">
+          <!-- Gradient Tick Icon -->
+          <div class="flex-shrink-0">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="url(#grad)" stroke-width="2">
+              <defs>
+                <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#DFF4F5"/>
+                  <stop offset="50%" stop-color="#5A8F91"/>
+                  <stop offset="100%" stop-color="#114c52"/>
+                </linearGradient>
+              </defs>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+
+          <!-- Text -->
+          <p class="text-base sm:text-lg font-medium leading-relaxed">
+            {reason}
+          </p>
+        </div>
+      ))
+    }
+  </div>
+</section>
