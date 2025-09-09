@@ -1,48 +1,106 @@
-<section class="bg-white text-gray-900 py-16 px-6 sm:px-10 lg:px-20 animate-fadeInUp">
-  <!-- Heading -->
-  <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12">
-    Why Choose Us
-  </h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+ <style>
+.scroll-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 1rem 0;
+}
 
-  <!-- Grid of Reasons -->
-  <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-    {
-      [
-        "Lifetime support",
-        "Precise and detailed report",
-        "Solution-based service",
-        "Two professionals at the price of one",
-        "Multi-disciplinary approach",
-        "Highly cost effective",
-        "Online mode",
-        "High precision CAD and GIS software",
-        "DIY Vastu Remedies",
-        "No demolition required",
-        "Ethical",
-        "Trustworthy",
-        "Scientific & logical",
-      ].map(reason => (
-        <div class="flex items-start space-x-3 p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition duration-300">
-          <!-- Gradient Tick Icon -->
-          <div class="flex-shrink-0">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="url(#grad)" stroke-width="2">
-              <defs>
-                <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#DFF4F5"/>
-                  <stop offset="50%" stop-color="#5A8F91"/>
-                  <stop offset="100%" stop-color="#114c52"/>
-                </linearGradient>
-              </defs>
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-            </svg>
-          </div>
+.scroll-wrapper {
+  display: flex;
+  gap: 1rem; /* space between cards */
+  width: max-content;
+  animation: scroll 60s linear infinite;
+}
 
-          <!-- Text -->
-          <p class="text-base sm:text-lg font-medium leading-relaxed">
-            {reason}
-          </p>
-        </div>
-      ))
-    }
-  </div>
-</section>
+.scroll-item {
+  flex: 0 0 auto;
+  min-width: 200px; /* ensures consistent size */
+  max-width: 220px; /* optional for larger screens */
+  padding: 1rem 1.5rem; /* uniform padding */
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+  white-space: normal; /* allow line breaks if text is long */
+  background: #ffffff;
+  border-radius: 12px; /* slightly rounded corners */
+  margin: 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  text-align: center;
+  line-height: 1.4;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.scroll-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+  .scroll-item {
+    min-width: 150px;
+    max-width: 170px;
+    font-size: 0.9rem;
+    padding: 0.8rem 1rem;
+  }
+}
+</style>
+
+</head>
+<body>
+  <section class="promise-section">
+   <h2 class="promise-title" style="font-family: 'Pacifico', cursive; font-size: 2.9rem; text-align: center; margin-bottom: 1rem;">
+  <span style="color:#0ea5e9;">Our</span>
+  <span style="color:#000;">Promise</span>
+</h2>
+
+ <p class="promise-subtitle" style="text-align: center; margin: 0 auto; max-width: 700px;">
+  We deliver services with precision, ethics, and innovation — ensuring practical, cost-effective solutions for your needs.
+</p>
+
+    <div class="scroll-container">
+      <div class="scroll-wrapper">
+        <div class="scroll-item">Lifetime Support</div>
+        <div class="scroll-item">Precise & Detailed Report</div>
+        <div class="scroll-item">Solution-Based Service</div>
+        <div class="scroll-item">Two Professionals at the Price of One</div>
+        <div class="scroll-item">Multi-Disciplinary Approach</div>
+        <div class="scroll-item">Highly Cost Effective</div>
+        <div class="scroll-item">Online Mode</div>
+        <div class="scroll-item">High Precision CAD & GIS Software</div>
+        <div class="scroll-item">DIY Vastu Remedies</div>
+        <div class="scroll-item">No Demolition Required</div>
+        <div class="scroll-item">Ethical</div>
+        <div class="scroll-item">Trustworthy</div>
+        <div class="scroll-item">Scientific & Logical</div>
+
+        <!-- Duplicate for infinite loop effect -->
+        <div class="scroll-item">Lifetime Support</div>
+        <div class="scroll-item">Precise & Detailed Report</div>
+        <div class="scroll-item">Solution-Based Service</div>
+        <div class="scroll-item">Two Professionals at the Price of One</div>
+        <div class="scroll-item">Multi-Disciplinary Approach</div>
+        <div class="scroll-item">Highly Cost Effective</div>
+        <div class="scroll-item">Online Mode</div>
+        <div class="scroll-item">High Precision CAD & GIS Software</div>
+        <div class="scroll-item">DIY Vastu Remedies</div>
+        <div class="scroll-item">No Demolition Required</div>
+        <div class="scroll-item">Ethical</div>
+        <div class="scroll-item">Trustworthy</div>
+        <div class="scroll-item">Scientific & Logical</div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

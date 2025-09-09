@@ -21,28 +21,16 @@
       position: relative;
       height: 100vh; /* full height */
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column; /* stack content vertically */
+      justify-content: flex-end; /* push content to bottom */
+      align-items: center; /* center horizontally */
       text-align: center;
-      background: url('/Images/Vaastubanner.jpg') center/cover no-repeat;
+      background: url('/Images/websitebanner.png') center/cover no-repeat;
       margin-top: 80px; /* adjust based on navbar height */
+      padding-bottom: 3rem; /* space from bottom */
     }
 
-    /* Overlay */
-    .banner-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        135deg,
-        rgba(44, 62, 80, 0.7) 0%,
-        rgba(52, 73, 94, 0.6) 50%,
-        rgba(41, 128, 185, 0.5) 100%
-      );
-      z-index: 1;
-    }
+    
 
     /* Content */
     .banner-content {
@@ -95,6 +83,7 @@
     @media (max-width: 768px) {
       .banner-section {
         padding: 1rem;
+        padding-bottom: 2rem;
       }
       .banner-content {
         padding: 1rem;
@@ -130,16 +119,17 @@
     <div class="banner-overlay"></div>
 
     <!-- Content -->
-    <div class="banner-content">
-      <h1>Transform Spaces</h1>
-      <div class="subtitle">Inspire Lives</div>
-      <p>
-        Elevate your interior design projects with a sleek, customizable template
-        built to showcase your creative vision. Perfect for modern designers who
-        want to captivate clients and stand out.
-      </p>
-      <a href="#" class="cta-button">Book a Consultation</a>
-    </div>
+   <div class="banner-content">
+  <a href="contactus" 
+     style="font-family: 'Pacifico', cursive; font-size: 1.5rem; text-decoration: none; 
+            display: inline-block; padding: 0.8rem 2rem; border-radius: 12px; 
+            background-color: #e0f2fe; box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: all 0.3s;">
+    <span style="color:#0ea5e9;">Book</span>
+    <span style="color:#000;">a Consultation</span>
+  </a>
+</div>
+
   </section>
 </body>
 </html>

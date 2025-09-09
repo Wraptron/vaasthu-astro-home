@@ -1,81 +1,48 @@
 ---
 const services = [
-  {
-    title: "Home Vastu",
-    description: "We use GIS software (Google Earth Pro) to geo-tag the site for accurate vastu analysis.",
-    image: "/Images/home.jpg",
-  },
-  {
-    title: "Commercial Vastu",
-    description: "We get precise degrees for the North point to ensure vastu compliance in commercial spaces.",
-    image: "/Images/commercial.png",
-  },
-  {
-    title: "Industrial Vastu",
-    description: "We draft the plan in AutoCAD and calculate the centroid of the space for accurate vastu alignment.",
-    image: "/Images/industrial.jpg",
-  },
-  {
-    title: "Vastu for Existing Space",
-    description: "We place the chakra to analyze vastu compliance for both owned and rental properties.",
-    image: "/Images/house.png",
-  },
-  {
-    title: "Astro Vastu",
-    description: "We check all 32 vastu directions and combine them with astrological analysis for accuracy.",
-    image: "/Images/vasthu.jpg",
-  },
-  {
-    title: "Devatha Analysis",
-    description: "We analyze the astrology of the occupant to align vastu recommendations with personal energies.",
-    image: "/Images/angel.png",
-  },
-  {
-    title: "Vastu Designing Services",
-    description: "We plot the 45 Devathas and Marma points for a vastu-compliant design layout.",
-    image: "/Images/Design.jpg",
-  },
-  {
-    title: "Construction as per Vastu",
-    description: "We provide onsite and online recommendations to ensure vastu compliance during construction.",
-    image: "/Images/construction-worker.png",
-  },
+  { title: "Home Vastu", image: "/Images/house.png" },
+  { title: "Commercial Vastu", image: "/Images/worker.png" },
+  { title: "Industrial Vastu", image: "/Images/power-plant.png" },
+  { title: "Vastu for Existing Space", image: "/Images/location.png" },
+  { title: "Astro Vastu", image: "/Images/astrology.png" },
+  { title: "Devatha Analysis", image: "/Images/angel.png" },
+  { title: "Vastu Designing Services", image: "/Images/graphic-designer.png" },
+  { title: "Construction as per Vastu", image: "/Images/construction-worker.png" },
 ];
 ---
 
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-  <!-- Heading -->
-  <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-gray-900 mb-12 animate-fadeInUp">
-    Our Services
+  <!-- Section Heading -->
+  <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12" style="font-family: 'Pacifico', cursive;">
+    <span style="color:#0ea5e9;">Our</span>
+    <span style="color:#000;">Services</span>
   </h2>
 
   <!-- Services Grid -->
-  <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-    {
-      services.map(service => (
-        <div
-          class="group rounded-2xl shadow-lg hover:shadow-2xl transition duration-500 bg-white overflow-hidden transform hover:-translate-y-2 hover:scale-105"
-        >
-          <!-- Image -->
-          <div class="overflow-hidden">
-            <img
-              src={service.image}
-              alt={service.title}
-              class="w-full h-56 sm:h-64 lg:h-72 object-cover transform group-hover:scale-110 transition duration-500"
-            />
-          </div>
+  <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 text-center">
+    {services.map(service => (
+      <div class="flex flex-col items-center">
+  <!-- Funky Title -->
+  <h3 
+    class="text-lg sm:text-xl font-bold mb-4"
+    style="
+      font-family: 'Permanent Marker', cursive; 
+      color: #0ea5e9; 
+      // text-shadow: 2px 2px #000; 
+      transform: rotate(-3deg);
+    "
+  >
+    {service.title}
+  </h3>
 
-          <!-- Text below image -->
-          <div class="p-5 sm:p-6">
-            <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-2 group-hover:text-[#114c52] transition duration-300">
-              {service.title}
-            </h3>
-            <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
-              {service.description}
-            </p>
-          </div>
-        </div>
-      ))
-    }
+  <!-- Image -->
+  <img 
+    src={service.image} 
+    alt={service.title} 
+    class="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 object-contain" 
+  />
+</div>
+
+    ))}
   </div>
 </section>
