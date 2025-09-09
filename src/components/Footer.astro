@@ -92,12 +92,12 @@
               class="relative text-hero-foreground/80 hover:text-primary transition after:content-[''] after:absolute after:w-0 after:h-[2px] after:left-0 after:bottom-[-3px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
               >Testimonials</a>
           </li>
-          <li>
+          <!-- <li>
             <a
               href="#"
               class="relative text-hero-foreground/80 hover:text-primary transition after:content-[''] after:absolute after:w-0 after:h-[2px] after:left-0 after:bottom-[-3px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
               >Buy Property</a>
-          </li>
+          </li> -->
           <li>
             <a
               href="/contactus"
@@ -146,20 +146,28 @@
 
     <!-- Bottom -->
     <!-- Bottom -->
-    <div
-      class="border-t border-hero-foreground/20 mt-10 pt-6 text-center hover:bg-primary/5 transition"
+   <div
+  class="border-t border-hero-foreground/20 mt-10 pt-6 text-center hover:bg-primary/5 transition"
+>
+  <p class="text-sm text-hero-foreground/60">
+    © <span id="year"></span> The Vaasthu. All rights reserved. | Developed by
+    <a
+      href="https://wraptron.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="font-semibold hover:text-primary transition"
     >
-      <p class="text-sm text-hero-foreground/60">
-        © 2025 The Vaasthu. All rights reserved. | Developed by
-        <a
-          href="https://wraptron.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="font-semibold hover:text-primary transition"
-        >
-          Wraptron LLP
-        </a>
-      </p>
-    </div>
+      Wraptron
+    </a>
+  </p>
+</div>
+
+<script>
+  const yearElem = document.getElementById("year");
+  if (yearElem) {
+    yearElem.textContent = String(new Date().getFullYear());
+  }
+</script>
+
   </div>
 </footer>
