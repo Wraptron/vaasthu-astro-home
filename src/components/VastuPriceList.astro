@@ -1,0 +1,86 @@
+---
+const priceList = [
+  { title: "Apartments below 1000 sq.ft", price: "INR 9,191/-", actualPrice: "18,000" },
+  { title: "Apartments above 1000 sq.ft", price: "INR 9,191/- + INR 15 per additional sq.ft", actualPrice: "INR 24/Sq.ft" },
+  { title: "Individual house below 3000 sq.ft", price: "INR 15/Sq.ft", actualPrice: "INR 33/Sq.ft" },
+  { title: "Individual house above 3000 sq.ft", price: "INR 15/Sq.ft upto 3000 sq.ft + INR 11/Sq.ft additional area", actualPrice: "" },
+  { title: "Individual house above 6000 sq.ft", price: "INR 15/Sq.ft upto 3000 sq.ft + INR 11/Sq.ft upto 6000 sq.ft + INR 9/Sq.ft above 6000 sq.ft", actualPrice: "" },
+  { title: "Designing charges for new property / architect sit", price: "INR 15/Sq.ft", actualPrice: "" },
+  { title: "Vastu corrections for commercial properties", price: "INR 15/Sq.ft", actualPrice: "" },
+  { title: "Astro Vastu", price: "+ INR 6/Sq.ft on original consultation", actualPrice: "" },
+  { title: "Check property Vastu before buying", price: "INR 5,000/- flat", actualPrice: "INR 10,000" },
+  { title: "Small budget plans (houses below 500 sq.ft)", price: "INR 3,131/-", actualPrice: "INR 5,000" },
+  { title: "Quick Vastu calls for single problem", price: "INR 5,259/-", actualPrice: "INR 10,000" },
+];
+---
+
+<section class="vastu-section py-20  min-h-screen flex flex-col items-center">
+  <div class="max-w-6xl w-full px-4 text-center">
+    <!-- Title -->
+    <h2 style="font-family: 'Pacifico', cursive; font-size: 3rem; margin-bottom: 1rem;">
+  <span style="color: #0ea5e9;">Vastu Consultation</span>
+  <span style="color: #000000;"> Price List</span>
+</h2>
+
+
+    <!-- Top Book Consultation Button -->
+    <a href="/contactus" 
+       style="font-family: 'Pacifico', cursive; font-size: 1.5rem; text-decoration: none; 
+              display: inline-block; padding: 0.8rem 2rem; border-radius: 12px; 
+              background-color: #e0f2fe; box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+              transition: all 0.3s; margin-bottom: 2rem;">
+      <span style="color:#0ea5e9;">Book</span> 
+      <span style="color:#000;">a Consultation</span>
+    </a>
+
+    <!-- Price List Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {priceList.map((item) => (
+    <div 
+      class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer group"
+    >
+      <h3 class="text-lg font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
+        {item.title}
+      </h3>
+      <p class=" font-bold mt-2">{item.price}</p>
+      {item.actualPrice && (
+        <p class="text-gray-400 text-sm line-through mt-1">
+          Actual Price: {item.actualPrice}
+        </p>
+      )}
+
+      {/* Book Consultation Button */}
+      {/* <a 
+        href="/contactus"
+        class="inline-block mt-4 px-6 py-2 bg-blue-100 text-blue-600 rounded-lg font-semibold 
+                   hover:bg-blue-200 hover:scale-105 transition-all duration-300"
+      >
+        Book Consultation
+      </a> */}
+    </div>
+  ))}
+</div>
+
+  </div>
+</section>
+
+<style>
+.vastu-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 20px;
+}
+
+@media (max-width: 768px) {
+  .vastu-section {
+    padding: 60px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vastu-section {
+    padding: 40px 10px;
+  }
+}
+</style>
