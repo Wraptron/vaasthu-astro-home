@@ -10,39 +10,44 @@ const services = [
   { title: "Construction as per Vastu", image: "/Images/construction-worker.png" },
 ];
 ---
+<head>
+  <!-- Add script-style fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
 
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
   <!-- Section Heading -->
-  <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12" style="font-family: 'Pacifico', cursive;">
-    <span style="color:#0ea5e9;">Our</span>
-    <span style="color:#000;">Services</span>
-  </h2>
+ <h1 class="text-4xl md:text-5xl font-semibold text-gray-900 mb-8">
+      <span style="font-family: 'Dancing Script', cursive; font-weight: 600;">
+        <span style="color:#0097b2;">Our</span>
+        <span style="color:#000;">Services</span>
+      </span>
+    </h1>
 
   <!-- Services Grid -->
-  <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 text-center">
-    {services.map(service => (
-      <div class="flex flex-col items-center">
-  <!-- Funky Title -->
-  <h3 
-    class="text-lg sm:text-xl font-bold mb-4"
-    style="
-      font-family: 'Permanent Marker', cursive; 
-      color: #0ea5e9; 
-      // text-shadow: 2px 2px #000; 
-      transform: rotate(-3deg);
-    "
-  >
-    {service.title}
-  </h3>
+<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 text-center">
+  {services.map(service => (
+    <div class="flex flex-col items-center">
+      {/* Image First */}
+      <img
+        src={service.image}
+        alt={service.title}
+        class="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 object-contain"
+      />
 
-  <!-- Image -->
-  <img 
-    src={service.image} 
-    alt={service.title} 
-    class="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 object-contain" 
-  />
+      {/* Funky Title Below Image */}
+      <h3
+        class="text-lg sm:text-xl font-bold mt-4"
+        style={{
+          fontFamily: "'Permanent Marker', cursive",
+          color: "#0097b2",
+          transform: "rotate(-3deg)",
+        }}
+      >
+        {service.title}
+      </h3>
+    </div>
+  ))}
 </div>
 
-    ))}
-  </div>
 </section>

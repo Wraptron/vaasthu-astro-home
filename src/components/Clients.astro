@@ -10,16 +10,19 @@ const clients = [
   { name: "Jiggys Cafe", img: "/Images/jiggys.jpg" },
 ];
 ---
-
+<head>
+  <!-- Add script-style fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
 <section class="py-16 bg-gradient-to-b to-gray-100 relative overflow-hidden">
   <div class="max-w-6xl mx-auto text-center">
-    <h2
-      class="text-3xl md:text-5xl font-extrabold mb-14 tracking-tight"
-      style="font-family: 'Pacifico', cursive; text-align: center;"
-    >
-      <span style="color:#0ea5e9;">Our</span>
-      <span style="color:#000;">Corporate Clients</span>
-    </h2>
+    <h1 class="text-4xl md:text-5xl font-semibold text-gray-900 mb-8">
+      <span style="font-family: 'Dancing Script', cursive; font-weight: 600;">
+        <span style="color:#0097b2;">Our Corporate 
+</span>
+        <span style="color:#000;">clients</span>
+      </span>
+    </h1>
 
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
       {clients.map((client) => (
