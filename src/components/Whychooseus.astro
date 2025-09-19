@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
- <style>
+ <!-- <style>
 .scroll-container {
   overflow: hidden;
   position: relative;
@@ -55,8 +55,59 @@
     padding: 0.8rem 1rem;
   }
 }
-</style>
+</style> -->
+<style>
+.scroll-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 1rem 0;
+}
 
+.scroll-wrapper {
+  display: flex;
+  gap: 1rem; /* spacing between cards */
+  width: max-content;
+  animation: scroll 60s linear infinite;
+}
+
+.scroll-item {
+  flex: 0 0 auto;
+  min-width: 200px;
+  max-width: 220px;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+  text-align: center;
+  line-height: 1.4;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Poppins', sans-serif; /* clean customer-friendly font */
+  white-space: normal;
+}
+
+.scroll-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 22px rgba(0, 151, 178, 0.25); /* soft teal hover */
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+  .scroll-item {
+    min-width: 150px;
+    max-width: 170px;
+    font-size: 0.9rem;
+    padding: 0.8rem 1rem;
+  }
+}
+</style>
 </head>
 <head>
   <!-- Add script-style fonts -->

@@ -1,0 +1,64 @@
+---
+import Layout from "../../layouts/Layout.astro"; 
+import Footer from "../../components/Footer.astro"; // adjust path if different
+---
+
+<Layout title="Media Links | Basics">
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <!-- Heading -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-semibold text-gray-900 mb-4">
+        <span style="font-family: 'Dancing Script', cursive; font-weight: 600;">
+          <span style="color:#0097b2;">Media</span>
+          <span style="color:#000;">Links</span>
+        </span>
+      </h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Explore our curated collection of Vastu videos, guides, and resources.  
+        Learn from trusted experts and gain insights at your own pace.
+      </p>
+    </div>
+
+    <!-- Video Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <!-- YouTube Video 1 -->
+      <div class="overflow-hidden rounded-xl shadow-lg transition-transform transform hover:scale-105">
+        <iframe 
+          class="w-full h-64"
+          src="https://www.youtube.com/embed/tptJOKNlauo" 
+          title="Vastu Video 1"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <!-- YouTube Video 2 -->
+      <div class="overflow-hidden rounded-xl shadow-lg transition-transform transform hover:scale-105">
+        <iframe 
+          class="w-full h-64"
+          src="https://www.youtube.com/embed/gxwnd05K3nU" 
+          title="Vastu Video 2"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <!-- YouTube Video 3 -->
+      <div class="overflow-hidden rounded-xl shadow-lg transition-transform transform hover:scale-105">
+        <iframe 
+          class="w-full h-64"
+          src="https://www.youtube.com/embed/oHtBimBV14c" 
+          title="Vastu Video 3"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ Footer -->
+  <Footer />
+</Layout>
