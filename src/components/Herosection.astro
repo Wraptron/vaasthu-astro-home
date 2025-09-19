@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -16,23 +16,23 @@
         'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
 
-    /* Banner Section */
+    
     .banner-section {
       position: relative;
-      height: 100vh; /* full height */
+      height: 100vh; 
       display: flex;
-      flex-direction: column; /* stack content vertically */
-      justify-content: flex-end; /* push content to bottom */
-      align-items: center; /* center horizontally */
+      flex-direction: column; 
+      justify-content: flex-end; 
+      align-items: center; 
       text-align: center;
       background: url('/Images/websitebanner.png') center/cover no-repeat;
-      margin-top: 80px; /* adjust based on navbar height */
-      padding-bottom: 3rem; /* space from bottom */
+      margin-top: 80px; 
+      padding-bottom: 3rem; 
     }
 
     
 
-    /* Content */
+   
     .banner-content {
       position: relative;
       z-index: 2;
@@ -79,7 +79,7 @@
       font-size: 1.1rem;
     }
 
-    /* Mobile Responsiveness */
+   
     @media (max-width: 768px) {
       .banner-section {
         padding: 1rem;
@@ -115,10 +115,10 @@
 </head>
 <body>
   <section class="banner-section">
-    <!-- Overlay -->
+   
     <div class="banner-overlay"></div>
 
-    <!-- Content -->
+   
    <div class="banner-content">
   <a href="contactus" 
      style="font-family: 'Pacifico', cursive; font-size: 1.5rem; text-decoration: none; 
@@ -130,6 +130,110 @@
   </a>
 </div>
 
+  </section>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transform Spaces Banner</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    /* Banner Section */
+    .banner-section {
+      position: relative;
+      margin-top: 100px; /* adjust for navbar */
+    }
+
+    .banner-section img {
+      width: 100%;
+      height: auto;
+      object-fit: contain; /* show full image without cropping */
+      display: block;
+    }
+
+    /* Button */
+    /* .cta-button {
+      position: absolute;
+      bottom: 5%; 
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Pacifico', cursive;
+      font-size: 1.2rem;
+      text-decoration: none;
+      display: inline-block;
+      padding: 0.6rem 1.5rem;
+      border-radius: 10px;
+      background-color: #e0f2fe;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: all 0.3s;
+      white-space: nowrap;
+    } */
+     .cta-button {
+  position: absolute;
+  bottom: 5%; /* place near bottom of the image */
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Pacifico', cursive;
+  font-size: 1.4rem; /* increased from 1.2rem */
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.8rem 2rem; /* slightly bigger */
+  border-radius: 12px; /* a little rounder */
+  background-color: #e0f2fe;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2); /* deeper shadow for emphasis */
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+
+    .cta-button span:first-child {
+      color: #0ea5e9;
+    }
+    .cta-button span:last-child {
+      color: #000;
+    }
+
+    /* Hover effect */
+    .cta-button:hover {
+      transform: translateX(-50%) scale(1.05);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .cta-button {
+        font-size: 1rem;
+        padding: 0.5rem 1.2rem;
+        bottom: 3%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cta-button {
+        font-size: 0.9rem;
+        padding: 0.4rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="banner-section">
+    <img src="/Images/websitebanner.png" alt="Website Banner" />
+    <a href="contactus" class="cta-button">
+      <span>Book</span> <span>a Consultation</span>
+    </a>
   </section>
 </body>
 </html>
