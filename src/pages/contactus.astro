@@ -1,5 +1,4 @@
 ---
-// contact.astro (or your page file)
 import Layout from '../layouts/Layout.astro';
 // import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
@@ -8,89 +7,56 @@ import Footer from '../components/Footer.astro';
 <Layout title="Contact Us">
   <!-- <Navbar /> -->
   <section class="contact-section">
-  <div class="container">
-    <div class="contact-header">
-      <h2>Connect With Us For</h2>
-      <h3>Your Next Project</h3>
-      <p>You can contact us through the form below, or give us a call during our office hours, Monday to Friday, from 9:00 AM to 7:00 PM. Let's work together to bring your ideas to life!</p>
-    </div>
-    
-    <form class="contact-form" id="contactForm">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="firstName">First name</label>
-          <input 
-            type="text" 
-            id="firstName" 
-            name="firstName" 
-            placeholder="Enter your name"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <label for="lastName">Last name</label>
-          <input 
-            type="text" 
-            id="lastName" 
-            name="lastName" 
-            placeholder="Enter your last name"
-            required
-          />
-        </div>
+    <div class="container">
+      <div class="contact-header">
+        <h2>Connect With Us For</h2>
+        <h3>Your Next Project</h3>
+        <p>
+          You can contact us through the form below, or give us a call during our office hours, 
+          Monday to Friday, from 9:00 AM to 7:00 PM. Let's work together to bring your ideas to life!
+        </p>
       </div>
-      
-      <div class="form-group">
-        <label for="phone">Phone</label>
-        <input 
-          type="tel" 
-          id="phone" 
-          name="phone" 
-          placeholder="Enter your phone"
-          required
-        />
-      </div>
-      
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input 
-          type="email" 
-          id="email" 
-          name="email" 
-          placeholder="Enter your email"
-          required
-        />
-      </div>
-      
-      <div class="form-group">
-        <label for="consultation">Consultation</label>
-        <textarea 
-          id="consultation" 
-          name="consultation" 
-          rows="4"
-          placeholder="What would you like to consult about"
-          required
-        ></textarea>
-      </div>
-      
-      <div class="form-group">
-        <label for="projectInfo">Project Information</label>
-        <textarea 
-          id="projectInfo" 
-          name="projectInfo" 
-          rows="4"
-          placeholder="Tell us about your project..."
-        ></textarea>
-      </div>
-      
-      <div class="form-actions">
-        <button type="submit" class="btn-submit">Submit</button>
-      </div>
-    </form>
-  </div>
-  
-</section>
 
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Enter your name" required />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter your phone" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="consultation">Consultation</label>
+          <textarea id="consultation" name="consultation" rows="4" placeholder="What would you like to consult about" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="projectInfo">Project Information</label>
+          <textarea id="projectInfo" name="projectInfo" rows="4" placeholder="Tell us about your project..."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </section>
 </Layout>
+
 <Footer />
 
 
@@ -341,39 +307,42 @@ import Footer from '../components/Footer.astro';
     if (!form) return;
 
     const submitBtn = form.querySelector('.btn-submit') as HTMLButtonElement | null;
-    if (!submitBtn) return;
 
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', async function (e) {
       e.preventDefault();
 
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData);
+      if (submitBtn) {
+        submitBtn.textContent = 'Submitting...';
+        submitBtn.disabled = true;
+      }
 
-      submitBtn.textContent = 'Submitting...';
-      submitBtn.disabled = true;
+      const formData = {
+        firstName: (form.elements.namedItem('firstName') as HTMLInputElement)?.value || '',
+        lastName: (form.elements.namedItem('lastName') as HTMLInputElement)?.value || '',
+        phone: (form.elements.namedItem('phone') as HTMLInputElement)?.value || '',
+        email: (form.elements.namedItem('email') as HTMLInputElement)?.value || '',
+        consultation: (form.elements.namedItem('consultation') as HTMLTextAreaElement)?.value || '',
+        projectInfo: (form.elements.namedItem('projectInfo') as HTMLTextAreaElement)?.value || '',
+      };
 
-      setTimeout(() => {
-        alert('Form submitted successfully!');
-        form.reset();
+      try {
+        const response = await fetch('/api/send-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
+
+        const result = await response.json();
+        alert(result.message);
+      } catch (err) {
+        alert('Something went wrong. Please try again later.');
+        console.error(err);
+      }
+
+      if (submitBtn) {
         submitBtn.textContent = 'Submit';
         submitBtn.disabled = false;
-      }, 1500);
-
-      console.log('Form data:', data);
+      }
     });
-
-    const customizeBtn = document.querySelector('.btn-customize') as HTMLButtonElement | null;
-    if (customizeBtn) {
-      customizeBtn.addEventListener('click', () => {
-        console.log('Customize template clicked');
-      });
-    }
-
-    const templatesBtn = document.querySelector('.btn-templates') as HTMLButtonElement | null;
-    if (templatesBtn) {
-      templatesBtn.addEventListener('click', () => {
-        console.log('See all templates clicked');
-      });
-    }
   });
 </script>

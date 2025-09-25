@@ -9,11 +9,14 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/node": "^9.4.4",
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.13.5",
+    "nodemailer": "^7.0.6",
     "yaml": "^2.8.0"
   },
   "devDependencies": {
+    "@types/nodemailer": "^7.0.1",
     "autoprefixer": "^10.4.21",
     "pos": "^0.4.2",
     "postcss": "^8.5.6",
