@@ -1,28 +1,10 @@
-// // @ts-check
-
-// import { defineConfig } from 'astro/config';
-
-// import tailwindcss from '@tailwindcss/vite';
-
-
-// // https://astro.build/config
-// export default defineConfig({
-//   output: "server", // <-- add this
-//   vite: {
-//     plugins: [tailwindcss()]
-//   }
-// });
-// @ts-check
+// astro.config.mjs
 import { defineConfig } from "astro/config";
-import tailwindcss from "@tailwindcss/vite";
-import node from "@astrojs/node"; // 👈 add this
+import node from "@astrojs/node";
+import tailwind from "@astrojs/tailwind";
 
-// https://astro.build/config
 export default defineConfig({
-  output: "server", // server mode
-  adapter: node({ mode: "standalone" }), // 👈 configure Node adapter
-  vite: {
-    plugins: [tailwindcss()],
-  },
+  output: "server",              // keep this
+  adapter: node({ mode: "standalone" }), // Node adapter
+  integrations: [tailwind()],
 });
-
