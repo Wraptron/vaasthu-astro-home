@@ -52,7 +52,7 @@ export async function POST({ request }: { request: Request }) {
     });
 
     return new Response(
-      JSON.stringify({ success: true, message: "✅ Emails sent to both client and admin!" }),
+      JSON.stringify({ success: true, message: "✅ Emails sent successfully we will contact you" }),
       { status: 200 }
     );
   } catch (error: any) {
